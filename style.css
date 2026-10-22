@@ -331,6 +331,22 @@ p { margin: 0 0 1.1em; text-align: justify; hyphens: auto; }
   45% { transform: scale(1.12); }
 }
 
+/* post scriptum */
+.ps {
+  margin: 48px 0 0;
+  padding-top: 24px;
+  border-top: 1px dashed rgba(156, 47, 34, .35);
+  font-family: "Caveat", cursive;
+  font-size: 1.55rem;
+  line-height: 1.45;
+  text-align: left;
+}
+.ps-sigla {
+  font-weight: 700;
+  color: var(--rubrica);
+  margin-right: 6px;
+}
+
 @media (max-width: 600px) {
   body { font-size: 1.1rem; padding: 24px 16px 48px; }
   .pergamena { padding: 44px 26px 52px; }
