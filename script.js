@@ -1,6 +1,6 @@
 // --- Configurazione --------------------------------------------------------
-// TODO: anno in cui vi siete messi insieme (il contatore parte da qui)
-const INIZIO = new Date(2024, 5, 21, 21, 51); // mesi da 0: 5 = giugno
+// Il contatore parte da qui: 21 giugno 2026, 21:51
+const INIZIO = new Date(2026, 5, 21, 21, 51); // mesi da 0: 5 = giugno
 
 // Entrambe le versioni aprono la busta: la tua e la sua.
 const ORE_GIUSTE = ["21:51", "21:54"];
