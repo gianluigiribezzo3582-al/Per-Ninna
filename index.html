@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Per Ninna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&family=UnifrakturMaguntia&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ LA BUSTA (chiusa) ============ -->
+  <section id="busta" class="busta" aria-label="Busta sigillata">
+    <div class="busta-carta">
+      <p class="destinatario">Alla cortese attenzione di<br><span>Ninna</span></p>
+      <p class="riservata">riservata · da aprire solo con le tue mani</p>
+
+      <form id="sigillo-form" class="sigillo-form" autocomplete="off">
+        <label for="ora">Per rompere il sigillo dimmi:<br><em>a che ora ci siamo messi insieme, il 21 giugno?</em></label>
+        <input id="ora" name="ora" type="text" inputmode="numeric" placeholder="hh:mm" maxlength="5" required>
+        <button type="submit" class="sigillo" aria-label="Rompi il sigillo">
+          <span>G</span>
+        </button>
+        <p id="sigillo-msg" class="sigillo-msg" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ LA LETTERA ============ -->
+  <main id="lettera" class="lettera" hidden>
+    <article class="pergamena">
+
+      <p class="luogo-data"><span id="data-oggi"></span></p>
+
+      <h1 class="intestazione">Cara Ninna,</h1>
+
+      <p class="capolettera">
+        <span class="iniziale" aria-hidden="true">S</span>o già cosa stai pensando: <em>"una lettera? e da quando Gibbo scrive lettere?"</em>.
+        Da oggi. E siccome tu mi hai insegnato che le cose importanti vanno messe per iscritto,
+        possibilmente con una bella grafia e senza troppe abbreviazioni, eccomi qua.
+        Prometto di non costringerti a datare questo documento: te lo dico io, è autentico.
+      </p>
+
+      <p>
+        Tu dici sempre di essere logorroica. Io ti rispondo per iscritto, così resta agli atti:
+        <strong>non è vero</strong>. O meglio, forse sì, ma io quella voce l'avrei ascoltata per ore
+        (e infatti l'ho fatto). Quando parli di <span class="todo">[un manoscritto / un codice / una scrittura che ama]</span>
+        ti si accendono gli occhi, e io di paleografia magari non ci capisco niente, ma di te sì.
+        E tutto quello che ti ho sentito dire, tutto, era esattamente il pezzo che mi mancava.
+      </p>
+
+      <hr class="fregio" aria-hidden="true">
+
+      <h2>Cose che so di te <small>(e che non mi sono mai dimenticato)</small></h2>
+
+      <ul class="elenco">
+        <li>
+          <span class="voce">Il tuo colore preferito</span>
+          è il <span class="todo">[colore]</span>. Lo so perché <span class="todo">[un dettaglio: un vestito, un quaderno, una tazza…]</span>.
+        </li>
+        <li>
+          <span class="voce">Il tuo tabacco</span>
+          è il <span class="todo">[marca / tipo]</span>, e le cartine <span class="todo">[quali]</span>.
+          Non che io approvi, ma lo so a memoria, quindi vale.
+        </li>
+        <li>
+          <span class="voce">In cucina</span>
+          sei pericolosa (in senso buono). Il tuo <span class="todo">[piatto forte]</span> meriterebbe un'edizione critica,
+          con tanto di apparato e varianti.
+        </li>
+        <li>
+          <span class="voce">Il libro</span>
+          che mi hai consigliato più volte è <span class="todo">[titolo]</span>, e il poeta che ti fa venire i brividi è
+          <span class="todo">[poeta]</span>.
+        </li>
+        <li>
+          <span class="voce">Il tuo modo di</span>
+          <span class="todo">[un'abitudine buffa: come beve il caffè, come legge, come si arrabbia…]</span>.
+        </li>
+        <li>
+          <span class="voce">La tua parola</span>
+          preferita, quella che dici sempre: <span class="todo">"[parola / espressione]"</span>.
+        </li>
+      </ul>
+
+      <hr class="fregio" aria-hidden="true">
+
+      <h2>Il 21 giugno, alle 21:51 <small>(o 21:54, va bene, hai vinto tu)</small></h2>
+
+      <p>
+        Ci siamo messi insieme il 21 giugno, il giorno più lungo dell'anno. Io dico alle 21:51, tu dici alle 21:54.
+        Tre minuti di discrepanza tra due testimoni: tu, da paleografa, sai meglio di me che queste cose capitano
+        anche nelle fonti più autorevoli. Facciamo che la data è certa e l'ora è <em>dubbia</em>,
+        come si scrive tra parentesi quadre.
+      </p>
+
+      <div class="contatore" aria-live="off">
+        <p class="contatore-titolo">Da quel momento sono passati</p>
+        <p id="contatore" class="contatore-numeri">…</p>
+        <p class="contatore-nota">(calcolati dalle 21:51, ma con tre minuti di tolleranza per te)</p>
+      </div>
+
+      <hr class="fregio" aria-hidden="true">
+
+      <p>
+        Non so bene come finiscono le lettere come questa. So però che certe cose non si chiudono
+        come si chiude un libro: restano lì, sottolineate, con le orecchie alle pagine giuste.
+        E noi ce lo diciamo ancora, in mille piccoli gesti, che ci vogliamo bene.
+      </p>
+
+      <p>
+        Questa lettera è solo per te. Tienila dove tieni le cose preziose, insieme ai tuoi
+        <span class="todo">[quaderni / libri / qualcosa di suo]</span>.
+      </p>
+
+      <!-- ============ LA FOTO ============ -->
+      <figure class="cornice">
+        <div class="cornice-legno">
+          <img src="img/noi.jpg" alt="Gibbo e Ninna" onerror="this.closest('.cornice').classList.add('vuota')">
+          <div class="foto-segnaposto">qui va la nostra foto<br><small>(img/noi.jpg)</small></div>
+        </div>
+        <figcaption><span class="todo">[luogo e data della foto]</span></figcaption>
+      </figure>
+
+      <p class="firma">
+        Sempre e comunque solo Tuo<br>
+        <span class="nome">Gibbo <span class="cuore" aria-label="cuore">💓</span></span>
+      </p>
+
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
