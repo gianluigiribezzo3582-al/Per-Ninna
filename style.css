@@ -278,7 +278,7 @@ p { margin: 0 0 1.1em; text-align: justify; hyphens: auto; }
 .foto-segnaposto {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   border: 6px solid #f8efd9;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
@@ -299,6 +299,15 @@ p { margin: 0 0 1.1em; text-align: justify; hyphens: auto; }
   font-family: "Caveat", cursive;
   font-size: 1.4rem;
   color: var(--inchiostro-tenue);
+}
+
+/* la porta aperta */
+.porta {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin: 0 auto 32px;
+  max-width: 34ch;
 }
 
 /* firma */
