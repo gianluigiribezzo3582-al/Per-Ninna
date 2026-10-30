@@ -347,6 +347,37 @@ p { margin: 0 0 1.1em; text-align: justify; hyphens: auto; }
   margin-right: 6px;
 }
 
+/* avviso dei nuovi pensierini */
+.novita {
+  margin: 0 0 32px;
+  padding: 16px 20px;
+  border: 1px dashed rgba(156, 47, 34, .45);
+  border-radius: 4px;
+  background: rgba(255, 250, 235, .45);
+  text-align: center;
+}
+.novita p {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+.portamici {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 999px;
+  background: var(--rubrica);
+  color: #fbeedd;
+  font-variant: small-caps;
+  letter-spacing: .05em;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+  transition: transform .2s, background .2s;
+}
+.portamici:hover { background: var(--ceralacca); transform: translateY(1px); }
+.aggiunta { scroll-margin-top: 24px; }
+
 /* aggiunte successive, come un foglio aggiunto alla lettera */
 .aggiunta {
   margin: 56px 0 0;

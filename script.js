@@ -56,6 +56,14 @@ let giaAperta = false;
 try { giaAperta = localStorage.getItem("ninna-aperta") === "1"; } catch (_) {}
 if (giaAperta || new URLSearchParams(location.search).has("apri")) apriLettera(true);
 
+// --- "Portamici": porta sempre all'ultimo pensierino aggiunto ---------------
+document.getElementById("portamici").addEventListener("click", (e) => {
+  const aggiunte = document.querySelectorAll(".aggiunta");
+  if (!aggiunte.length) return;
+  e.preventDefault();
+  aggiunte[aggiunte.length - 1].scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 // --- Contatore -------------------------------------------------------------
 const contatore = document.getElementById("contatore");
 
