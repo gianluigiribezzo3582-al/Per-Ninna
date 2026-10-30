@@ -56,10 +56,6 @@ let giaAperta = false;
 try { giaAperta = localStorage.getItem("ninna-aperta") === "1"; } catch (_) {}
 if (giaAperta || new URLSearchParams(location.search).has("apri")) apriLettera(true);
 
-// --- Data in alto a destra -------------------------------------------------
-document.getElementById("data-oggi").textContent =
-  new Date().toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
-
 // --- Contatore -------------------------------------------------------------
 const contatore = document.getElementById("contatore");
 

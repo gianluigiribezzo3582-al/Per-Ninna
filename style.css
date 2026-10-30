@@ -347,6 +347,26 @@ p { margin: 0 0 1.1em; text-align: justify; hyphens: auto; }
   margin-right: 6px;
 }
 
+/* aggiunte successive, come un foglio aggiunto alla lettera */
+.aggiunta {
+  margin: 56px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid rgba(156, 47, 34, .35);
+}
+.aggiunta p { margin-bottom: .9em; }
+.aggiunta-data {
+  text-align: right;
+  font-style: italic;
+  color: var(--inchiostro-tenue);
+}
+.aggiunta-firma {
+  text-align: right;
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 8px 0 0;
+}
+
 @media (max-width: 600px) {
   body { font-size: 1.1rem; padding: 24px 16px 48px; }
   .pergamena { padding: 44px 26px 52px; }
