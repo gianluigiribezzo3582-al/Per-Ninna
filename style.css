@@ -378,6 +378,25 @@ p { margin: 0 0 1.1em; text-align: justify; hyphens: auto; }
 .portamici:hover { background: var(--ceralacca); transform: translateY(1px); }
 .aggiunta { scroll-margin-top: 24px; }
 
+/* la scadenza dell'invito, come un timbro */
+.scadenza {
+  display: block;
+  width: fit-content;
+  margin: 16px 0 0 auto;
+  padding: 2px 12px;
+  border: 2px solid var(--rubrica);
+  border-radius: 4px;
+  color: var(--rubrica);
+  font-family: "IM Fell English SC", serif;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: .03em;
+  transform: rotate(-2deg);
+  opacity: .85;
+}
+.scadenza strong { font-size: 1.25rem; font-weight: 400; }
+
 /* aggiunte successive, come un foglio aggiunto alla lettera */
 .aggiunta {
   margin: 56px 0 0;
