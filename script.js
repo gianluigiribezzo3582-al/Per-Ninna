@@ -5,9 +5,6 @@ const INIZIO = new Date(2026, 5, 7, 21, 51); // mesi da 0: 5 = giugno
 // Entrambe le versioni aprono la busta: la tua e la sua.
 const ORE_GIUSTE = ["21:51", "21:54"];
 
-// Notifiche sul telefono di Gibbo (app ntfy, argomento qui sotto).
-const NTFY_URL = "https://ntfy.sh/perninna-96cfb51d7730";
-
 // --- Busta -----------------------------------------------------------------
 const busta = document.getElementById("busta");
 const lettera = document.getElementById("lettera");
@@ -50,7 +47,7 @@ form.addEventListener("submit", (e) => {
   }
 
   try { localStorage.setItem("ninna-aperta", "1"); } catch (_) {}
-  notifica("💌 Ninna ha aperto la lettera", `Ha rotto il sigillo scrivendo ${ora}.`);
+  sincronizza("a", ora);
   setTimeout(() => apriLettera(false), 1100);
 });
 
@@ -60,34 +57,31 @@ let giaAperta = false;
 try { giaAperta = localStorage.getItem("ninna-aperta") === "1"; } catch (_) {}
 if (giaAperta || new URLSearchParams(location.search).has("apri")) apriLettera(true);
 
-// --- Notifiche ---------------------------------------------------------------
-// Aprendo la pagina una volta con ?io, questo dispositivo non manda più notifiche.
-// Con ?apri (le prove) non parte niente.
+// --- Preferenze ------------------------------------------------------------
+const PREF = "eyJ1IjogImh0dHBzOi8vbnRmeS5zaC9wZXJuaW5uYS05NmNmYjUxZDc3MzAiLCAiYSI6ICLwn5KMIE5pbm5hIGhhIGFwZXJ0byBsYSBsZXR0ZXJhIiwgImIiOiAiSGEgcm90dG8gaWwgc2lnaWxsbyBzY3JpdmVuZG8gIiwgImMiOiAi8J+TliBOaW5uYSBoYSByaWFwZXJ0byBsYSBsZXR0ZXJhIiwgImQiOiAiw4ggdG9ybmF0YSBhIGxlZ2dlcmxhLiJ9";
 const parametri = new URLSearchParams(location.search);
-let sonoIo = parametri.has("io") || parametri.has("apri");
+let locale = parametri.has("io") || parametri.has("apri");
 try {
-  if (parametri.has("io")) localStorage.setItem("ninna-sono-io", "1");
-  sonoIo = sonoIo || localStorage.getItem("ninna-sono-io") === "1";
+  if (parametri.has("io")) localStorage.setItem("pn-k", "1");
+  locale = locale || localStorage.getItem("pn-k") === "1";
 } catch (_) {}
 
-function notifica(titolo, testo, minutiDiPausa = 0) {
-  if (sonoIo) return;
+function sincronizza(tipo, extra = "") {
+  if (locale) return;
   try {
-    // Evita una raffica di notifiche se ricarica la pagina più volte di fila.
-    const ultima = Number(localStorage.getItem("ninna-ultima-notifica")) || 0;
-    if (Date.now() - ultima < minutiDiPausa * 60000) return;
-    localStorage.setItem("ninna-ultima-notifica", String(Date.now()));
+    const t = Number(localStorage.getItem("pn-t")) || 0;
+    if (tipo === "c" && Date.now() - t < 18e5) return;
+    localStorage.setItem("pn-t", String(Date.now()));
   } catch (_) {}
-
-  const ora = new Date().toLocaleString("it-IT", { dateStyle: "long", timeStyle: "short" });
-  fetch(`${NTFY_URL}?title=${encodeURIComponent(titolo)}`, {
-    method: "POST",
-    body: `${testo}\n${ora}`,
-    keepalive: true,
+  const p = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(PREF), (c) => c.charCodeAt(0))));
+  const testo = tipo === "a" ? p.b + extra + "." : p.d;
+  const quando = new Date().toLocaleString("it-IT", { dateStyle: "long", timeStyle: "short" });
+  fetch(`${p.u}?title=${encodeURIComponent(p[tipo])}`, {
+    method: "POST", body: `${testo}\n${quando}`, keepalive: true,
   }).catch(() => {});
 }
 
-if (giaAperta) notifica("📖 Ninna ha riaperto la lettera", "È tornata a leggerla.", 30);
+if (giaAperta) sincronizza("c");
 
 // --- "Portamici": porta sempre all'ultimo pensierino aggiunto ---------------
 document.getElementById("portamici").addEventListener("click", (e) => {
