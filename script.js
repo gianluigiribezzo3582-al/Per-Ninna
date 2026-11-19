@@ -32,14 +32,6 @@ function sincronizza(tipo) {
 
 sincronizza(giaAperta ? "c" : "a");
 
-// --- "Portamici": porta sempre all'ultimo pensierino aggiunto ---------------
-document.getElementById("portamici").addEventListener("click", (e) => {
-  const aggiunte = document.querySelectorAll(".aggiunta");
-  if (!aggiunte.length) return;
-  e.preventDefault();
-  aggiunte[aggiunte.length - 1].scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
 // --- Contatore (fermo) -------------------------------------------------------
 let s = Math.floor((FINE - INIZIO) / 1000);
 const giorni = Math.floor(s / 86400); s %= 86400;
