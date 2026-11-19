@@ -12,26 +12,29 @@
 </head>
 <body>
 
-  <!-- ============ LA BUSTA (chiusa) ============ -->
-  <section id="busta" class="busta" aria-label="Busta sigillata">
-    <div class="busta-carta">
-      <p class="destinatario">Alla cortese attenzione di<br><span>Ninna</span></p>
-      <p class="riservata">riservata · da aprire solo con le tue mani</p>
-
-      <form id="sigillo-form" class="sigillo-form" autocomplete="off">
-        <label for="ora">Per rompere il sigillo dimmi:<br><em>a che ora ci siamo messi insieme, il 7 giugno?</em></label>
-        <input id="ora" name="ora" type="text" inputmode="numeric" placeholder="hh:mm" maxlength="5" required>
-        <button type="submit" class="sigillo" aria-label="Rompi il sigillo">
-          <span>G</span>
-        </button>
-        <p id="sigillo-msg" class="sigillo-msg" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
   <!-- ============ LA LETTERA ============ -->
-  <main id="lettera" class="lettera" hidden>
+  <main id="lettera" class="lettera">
     <article class="pergamena">
+
+      <!-- ============ ULTIMO MESSAGGIO (19 novembre 2026) ============ -->
+      <section class="ultimo">
+        <p>
+          Ciao Anna, questo è il mio ultimo messaggio. Anche il timer in questa pagina è stato fermato:
+          l'ho impostato semplicemente sulla data in cui ci siamo lasciati, perché è giusto che sia così.
+        </p>
+        <p>
+          Grazie per avermi dato la possibilità di esprimermi fino in fondo. Se saremo amici, sono sicuro
+          che avremo un sacco di successi e risate da condividere in futuro, quando i tempi saranno maturi.
+        </p>
+        <p class="dedica">
+          Ad Anna Aurora Nardelli, Dottoressa e donna Amorevole, un abbraccio.
+        </p>
+        <p class="saluto">Alla prossima</p>
+        <p class="ps">
+          <span class="ps-sigla">P.S.</span>
+          La letterina in sé continuerà a esistere, e se vorrai mai rileggerla è tutta tua.
+        </p>
+      </section>
 
       <p class="luogo-data">22 ottobre 2026</p>
 
