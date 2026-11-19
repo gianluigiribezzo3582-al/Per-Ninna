@@ -1,7 +1,7 @@
 // --- Configurazione --------------------------------------------------------
-// Il contatore va dal 7 giugno 2026, 21:51 al 18 ottobre 2026 ed è fermo lì.
+// Il contatore va dal 7 giugno 2026, 21:51 al 18 ottobre 2026, 23:10 ed è fermo lì.
 const INIZIO = new Date(2026, 5, 7, 21, 51); // mesi da 0: 5 = giugno
-const FINE = new Date(2026, 9, 18);
+const FINE = new Date(2026, 9, 18, 23, 10);
 
 // --- Preferenze ------------------------------------------------------------
 const PREF = "eyJ1IjogImh0dHBzOi8vbnRmeS5zaC9wZXJuaW5uYS05NmNmYjUxZDc3MzAiLCAiYSI6ICLwn5KMIE5pbm5hIGhhIGFwZXJ0byBsYSBsZXR0ZXJhIiwgImIiOiAiUHJpbWEgdm9sdGEgY2hlIGxhIGFwcmUuIiwgImMiOiAi8J+TliBOaW5uYSBoYSByaWFwZXJ0byBsYSBsZXR0ZXJhIiwgImQiOiAiw4ggdG9ybmF0YSBhIGxlZ2dlcmxhLiJ9";
